@@ -1,0 +1,18 @@
+1. Download JDK from Oracle in download folder
+2. sudo mkdir /usr/lib/jvm if folder doesn't exists
+3. cd /usr/lib/jvm
+4. sudo tar -xvzf ~/Downloads/jdk-11.0.5_linux-x64_bin.tar.gz
+5. sudo nano /etc/environment
+6. /usr/lib/jvm/jdk-11.0.5/bin add this end of the line. note path are separated via : in the string. 
+7. JAVA_HOME="/usr/lib/jvm/jdk-11.0.5" at the end of file. then save and exit
+8. sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-11.0.5/bin/java" 0
+9. sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk-11.0.5/bin/javac" 0
+10. sudo update-alternatives --set java /usr/lib/jvm/jdk-11.0.5/bin/java
+11. sudo update-alternatives --set javac /usr/lib/jvm/jdk-11.0.5/bin/javac
+
+Verify installation
+12. update-alternatives --list java
+13. update-alternatives --list javac
+
+Restart
+14. java -version
